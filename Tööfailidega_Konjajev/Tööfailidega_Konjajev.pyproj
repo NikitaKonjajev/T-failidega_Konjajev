@@ -21,7 +21,13 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="module1.py" />
     <Compile Include="Tööfailidega_Konjajev.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="est.txt" />
+    <Content Include="rus.txt" />
+    <Content Include="Laused.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

@@ -1,0 +1,7 @@
+raamat
+auto
+maja
+päike
+inimene
+õun
+viga
