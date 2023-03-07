@@ -1,8 +1,4 @@
-def summa(a,b):
-    pass
-print(summa(4,2))
-
-
+import random
 #Praktiline töö "Sõnastik"
 #перевод с эстонского на русский:
 def est_to_rus(text:str, text_est:list, text_rus:list):
@@ -46,33 +42,42 @@ def correct_word(text, text_est,text_rus):
        text_est[index] = new_translation
        print("Sõna on parandatud")
 
-def Teadmiste_kontroll(text_est,text_rus,valik):
+def teadmiste_kontroll(text_rus,text_est):
     p=0
-    kokku=int(input("Mitu küsimust?"))
+    kokku=int(input("Mitu küsimust? "))
     for i in range(kokku):
-        järjend=valik([text_rus,text_est])
-        sõna=valik(järjend) 
-        print(f"{sõna} -", end="") 
-        tõlke=input 
+        järjend=random.choice([text_rus,text_est])
+        sõna=random.choice(järjend)
+        print(f"{sõna} - ",end="")
+        tõlke=input()
         if sõna in text_rus:
-            i=text_rus.index(sõna)
-            tõlke_kontroll=text_est[i] 
-        elif sõna in text_rus:
+           i=text_rus.index(sõna)
+           tõlke_kontroll=text_est[i]
+        elif sõna in text_est:
             i=text_est.index(sõna)
-            tõlke_kontroll=text_rus[i] 
+            tõlke_kontroll=text_rus[i]
         if tõlke==tõlke_kontroll:
             p+=1
-            print("Õige")
+        if (p/kokku)*100>90:
+            hinne=5
+        elif (p/kokku)*100>75:
+            hinne=4
+        elif (p/kokku)*100>60:
+            hinne=3
         else:
-            print("vale")
+            hinne="Väga halb"
+            print("Õige")
+            return hinne
+    else:
+         print("Vale")
     if (p/kokku)*100>90:
-        hinne=5 
+        hinne=5
     elif (p/kokku)*100>75:
         hinne=4
     elif (p/kokku)*100>60:
         hinne=3
-    else: 
-        hinne="Väga halb!"
+    else:
+         hinne="Väga halb"
     return hinne
 
 

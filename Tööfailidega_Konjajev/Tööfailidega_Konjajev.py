@@ -39,7 +39,8 @@ while True:
         for line in laused:
             print(line)    
      elif v==5:
-         hinne=Teadmiste_kontroll(text_est,text_rus,valik)
+         hinne=teadmiste_kontroll(text_rus,text_est)
+         print(hinne)
      elif v=="6":
          break
 #Работа в классе
