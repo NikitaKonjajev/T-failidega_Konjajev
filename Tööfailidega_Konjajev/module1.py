@@ -1,3 +1,8 @@
+def summa(a,b):
+    pass
+print(summa(4,2))
+
+
 #Praktiline töö "Sõnastik"
 #перевод с эстонского на русский:
 def est_to_rus(text:str, text_est:list, text_rus:list):
@@ -41,12 +46,12 @@ def correct_word(text, text_est,text_rus):
        text_est[index] = new_translation
        print("Sõna on parandatud")
 
-def Teadmiste_kontroll(text_est,text_rus,v):
+def Teadmiste_kontroll(text_est,text_rus,valik):
     p=0
     kokku=int(input("Mitu küsimust?"))
     for i in range(kokku):
-        järjend=v([text_rus,text_est])
-        sõna=v(järjend) 
+        järjend=valik([text_rus,text_est])
+        sõna=valik(järjend) 
         print(f"{sõna} -", end="") 
         tõlke=input 
         if sõna in text_rus:

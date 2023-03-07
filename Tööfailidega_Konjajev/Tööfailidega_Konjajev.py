@@ -1,3 +1,7 @@
+
+
+
+
 from module1 import *
 #Praktiline töö "Sõnastik"
 text_est=Loe_failist("est.txt")
@@ -35,7 +39,7 @@ while True:
         for line in laused:
             print(line)    
      elif v==5:
-         hinne=Teadmiste_kontroll(text_est,text_rus,v)
+         hinne=Teadmiste_kontroll(text_est,text_rus,valik)
      elif v=="6":
          break
 #Работа в классе
