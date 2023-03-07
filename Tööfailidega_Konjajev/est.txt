@@ -5,3 +5,6 @@ päike
 inimene
 õun
 viga
+pea
+pall
+jalg

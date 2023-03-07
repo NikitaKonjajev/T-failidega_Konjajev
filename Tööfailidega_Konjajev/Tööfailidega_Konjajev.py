@@ -3,26 +3,42 @@ from module1 import *
 text_est=Loe_failist("est.txt")
 text_rus=Loe_failist("rus.txt")
 while True:
-    print("1 - eesti keelest vene keelde ja vene keelest eesti keelde")
-    print("2 - kui otsisõna sõnaraamatust puudub, andke kasutajale võimalus see sõnaraamatusse lisada")
-    print("3 - kui kasutaja leiab sõnastikust vea, peab tal olema võimalus seda parandada")
-    print("4 - kasutaja soovi korral kontrollida sõnaraamatu sõnade tundmist, rakendage seda võimalust ")
-    v=int(input("Выберите действие: "))
-    if v==1:
-       text_es = input("Введите слово на эстонском языке: ")
-       text_ru = est_to_rus(text_es, text_est, text_rus)
-       if text_ru:
-           print("В переводе на русский это", text_ru)
-       else:
-            print("Ошибка")
-    elif v==2:
-        text_ru=input("Введите слово на русском языке: ")
-        text_es=rus_to_est(text_ru, text_est, text_rus)
-        if text_es:
-            print("В переводе на эстонский это", text_es)
-        else:
-             print("Ошибка")
+     print("1-Tõlge eesti keelest vene keelde")
+     print("2-Tõlge vene keelest eesti keelde")
+     print("3-Lisa sõnastikku")
+     print("4-Te võite sõnavea parandada")
+     print("5-Sõnade tundmise kontrollimine")
+     print("6-Välja")
+     v=int(input("Выберите действие: "))
+     if v==1:
+         text_es = input("Kirjuta eestis: ")
+         text_ru = est_to_rus(text_es, text_est, text_rus)
+         if text_ru:
+            print("Vene keles see on", text_ru)
+     elif v==2:
+         text_ru=input("Kirjuta vene keeles: ")
+         text_es=rus_to_est(text_ru, text_est, text_rus)
+         if text_es:
+             print("Eesti keeles see on", text_es)
+     elif v==3:
+         text=input("Напишите слово на эстонском: ")
+         text_add(text, text_est, text_rus)
+         laused=Loe_failist("est.txt")
+         for line in laused:
+             print(line) 
+         laused=Loe_failist("rus.txt")
+         for line in laused:
+             print(line)
+     elif v==4:
+        correct_word(text, text_est, text_rus)               
+        laused=loe_failist("est.txt")
+        for line in laused:
+            print(line)    
+     elif v==5:
+         Teadmiste_kontroll(text_est,text_rus)
 
+     elif v=="6":
+         break
 #Работа в классе
 laused=[]
 while True:
