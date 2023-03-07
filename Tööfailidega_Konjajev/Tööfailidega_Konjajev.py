@@ -21,7 +21,7 @@ while True:
          if text_es:
              print("Eesti keeles see on", text_es)
      elif v==3:
-         text=input("Напишите слово на эстонском: ")
+         text=input("Kirjuta sõna eestis: ")
          text_add(text, text_est, text_rus)
          laused=Loe_failist("est.txt")
          for line in laused:
@@ -35,8 +35,7 @@ while True:
         for line in laused:
             print(line)    
      elif v==5:
-         Teadmiste_kontroll(text_est,text_rus)
-
+         hinne=Teadmiste_kontroll(text_est,text_rus,v)
      elif v=="6":
          break
 #Работа в классе
